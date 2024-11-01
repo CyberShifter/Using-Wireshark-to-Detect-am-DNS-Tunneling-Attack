@@ -1,4 +1,4 @@
-# Using-Wireshark-to-Detect-am-DNS-Tunneling-Attack
+# Using-Wireshark-to-Detect-a-DNS-Tunneling-Attack
 
 ---
 
