@@ -58,7 +58,8 @@ It is very obvious that the protocol with the most packets is the UDP protocol, 
 
 
 ---
-3. Conversations
+**3. Conversations**
+
 This statistic breaks down traffic between specific IP addresses, which is helpful for tracking who is talking to whom. A “conversation” in this context refers to a communication session between two endpoints, such as two IP addresses or two MAC addresses.
 
 
@@ -70,12 +71,14 @@ This feature helps to analyze the traffic exchanged between pairs of devices or 
 The Investigation Unfolds
 Here’s how I broke down the case to find the culprit and unravel the DNS tunneling attack.
 
-Total Packets in the Capture File
+**Total Packets in the Capture File**
+
 The first step is always about assessing the sheer volume of the data you’re working with. To get this, I navigated to Statistics > File properties to view the overall number of packets captured. I didn’t know what I was looking for at this point, so I just wanted to know the size of the dataset.
 
 The file contained 39,106 packets in total, giving me an idea of how much data I needed to sift through.
 
-The DNS Query
+**The DNS Query**
+
 To get a sense of what domain names were being queried, I applied a display filter for DNS traffic (dns). This helped me zero in on the first domain name queried, which was webmasterdev[.]com.
 
 
@@ -117,7 +120,8 @@ To confirm my suspicions, I looked at the file signature — also known as magic
 
 Digging deeper into the HTTP request headers, I found that the victim used Windows PowerShell to download the file. This suggested that the attacker might have used a script to automate the malicious download, making the attack even more insidious.
 
-Getting the file Hash
+**Getting the file Hash**
+
 To further validate my findings, I extracted the file from wireshark, saved it in a folder and got the hash using the command below;
 
 
@@ -132,6 +136,7 @@ I submitted it to VirusTotal, an online service that scans files for malware. Vi
 
 
 By this point, I knew the attack could involve DNS, so I went back to check which protocol dominated the UDP packets. It turned out to be DNS protocol, further confirming my suspicion that DNS was being abused in this attack.
+
 
 Finally, I analyzed the DNS traffic more closely and found that a domain, steasteel[.]net was repeatedly queried throughout the capture.
 
