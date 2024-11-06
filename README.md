@@ -157,11 +157,21 @@ The attack turned out to be DNS tunneling, a covert channel that uses DNS querie
 
 In simple terms, here’s what the attacker did:
 
-Gained access to the victim’s computer: The attacker found a way into a computer (most likely through something like a phishing email or exploiting a weak point in the system).
-Used DNS to communicate: Instead of using common methods like web traffic, the attacker used something called DNS (which is usually used to match website names to their IP addresses) to send secret messages back and forth to a server they controlled. This allowed them to hide their communication because DNS traffic usually doesn’t raise suspicion.
-Downloaded a disguised malicious file: The attacker used PowerShell (a built-in Windows tool) to download a file. The file was disguised as an image (image/gif), but in reality, it was a malicious program designed to infect the computer.
-Installed a Trojan virus: The downloaded file was a Pikabot Trojan. Once installed, this virus gave the attacker more control over the computer and allowed them to steal information or cause more damage later.
-Kept communication hidden in DNS queries: The attacker continued to send and receive commands by repeatedly using DNS queries to a domain called steasteel[.]net. This method of communication was hidden inside normal-looking DNS traffic, which made it harder for the system to detect.
+**Gained access to the victim’s computer:** The attacker found a way into a computer (most likely through something like a phishing email or exploiting a weak point in the system).
+
+
+**Used DNS to communicate:** Instead of using common methods like web traffic, the attacker used something called DNS (which is usually used to match website names to their IP addresses) to send secret messages back and forth to a server they controlled. This allowed them to hide their communication because DNS traffic usually doesn’t raise suspicion.
+
+
+**Downloaded a disguised malicious file:** The attacker used PowerShell (a built-in Windows tool) to download a file. The file was disguised as an image (image/gif), but in reality, it was a malicious program designed to infect the computer.
+
+
+**Installed a Trojan virus:** The downloaded file was a Pikabot Trojan. Once installed, this virus gave the attacker more control over the computer and allowed them to steal information or cause more damage later.
+
+
+**Kept communication hidden in DNS queries:** The attacker continued to send and receive commands by repeatedly using DNS queries to a domain called steasteel[.]net. This method of communication was hidden inside normal-looking DNS traffic, which made it harder for the system to detect.
+
+
 In summary, the attacker cleverly used normal DNS communication to secretly control the victim’s machine and install a virus, while trying to stay under the radar.
 
 
