@@ -6,7 +6,7 @@
 
 “In cybersecurity, sometimes the answer is hidden in the details, buried deep within network traffic data.”
 
-As a SOC Analyst, I’ve learned that the most revealing insights often lurk in the minutiae of network traffic data. This principle came to life during a recent challenge I tackled as part of the Practical SOC Analyst Course by [TCMSecurity](https://academy.tcm-sec.com/).
+As a SOC Analyst, I’ve learned that the most revealing insights often lurk in the minutiae of network traffic data. This principle came to fruition during a recent challenge I addressed while freelancing for a company whose name I’ll keep confidential for privacy reasons.
 
 
 **Tools I Used**
